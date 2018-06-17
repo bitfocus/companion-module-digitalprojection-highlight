@@ -14,11 +14,41 @@ function instance(system, id, config) {
 	return self;
 }
 
+instance.prototype.init_udp = function() {
+	var self = this;
+
+	if (self.udp !== undefined) {
+		self.udp.destroy();
+		delete self.udp;
+	}
+
+	if (self.config.host !== undefined) {
+		self.udp = new udp(self.config.host, 7000);
+
+		self.udp.on('status_change', function (status, message) {
+			self.status(status, message);
+		});
+	}
+};
+
 instance.prototype.init = function() {
 	var self = this;
 
 	debug = self.debug;
 	log = self.log;
+
+	self.status(self.STATUS_UNKNOWN);
+	self.init_udp();
+};
+
+instance.prototype.updateConfig = function(config) {
+	var self = this;
+	self.config = config;
+
+	if (self.udp !== undefined) {
+		self.udp.destroy();
+		delete self.udp;
+	}
 
 	self.status(self.STATUS_UNKNOWN);
 
@@ -96,26 +126,11 @@ instance.prototype.action = function(action) {
 
 	if (dphl[id] !== undefined) {
 
-		// TODO: remove this when issue #71 is fixed
-		if (self.udp === undefined && self.config.host) {
-			self.udp = new udp(self.config.host, 7000);
-
-			self.udp.on('status_change', function (status, message) {
-				self.status(status, message);
-			});
-		}
-
 		if (self.udp !== undefined) {
 
-			if (self.udp.host != self.config.host) {
-				// TODO: remove this when issue #71 is fixed
-				self.udp.unload();
-				self.udp = new udp(self.config.host, 7000);
-			}
-
 			debug('sending',dphl[id],"to",self.udp.host);
-
 			self.udp.send(dphl[id]);
+
 		}
 	}
 };

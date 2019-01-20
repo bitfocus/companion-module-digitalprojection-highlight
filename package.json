@@ -1,17 +1,19 @@
 {
-  "name": "dphighlight",
-  "version": "1.0.0",
+	"name": "dphighlight",
+	"version": "1.0.1",
 	"api_version": "1.0.0",
-	"keywords": [ "Projector" ],
+	"keywords": [
+		"Projector"
+	],
 	"manufacturer": "Digital Projection",
 	"product": "HIGHlite",
-	"shortname": "dp",
+	"shortname": "dp highlite",
 	"homepage": "http://www.digitalprojection.com/highlite-projectors/",
-  "description": "Digital Projection HIGHlite plugin for Companion",
-  "main": "dphighlight.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Per Røine <per.roine@gmail.com>",
-  "license": "ISC"
+	"description": "Digital Projection HIGHlite plugin for Companion",
+	"main": "dphighlight.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Per Røine <per.roine@gmail.com>",
+	"license": "MIT"
 }

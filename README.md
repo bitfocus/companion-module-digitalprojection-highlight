@@ -1,2 +1,2 @@
-# companion-module-dphighlight
+# companion-module-digitalprojection-highlight
 See HELP.md and LICENSE

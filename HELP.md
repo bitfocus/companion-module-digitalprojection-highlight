@@ -8,8 +8,8 @@
 * Close Shutter
 * Freeze Input
 * Unfreeze Input
-* Increase Brightnes
-* Decrease Brightnes
+* Increase Brightness
+* Decrease Brightness
 * Increase Contrast
 * Decrease Contrast
 * Increase Saturation

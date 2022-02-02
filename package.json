@@ -11,12 +11,19 @@
 	"manufacturer": "Digital Projection",
 	"product": "HIGHlite",
 	"shortname": "dp highlite",
-	"homepage": "http://www.digitalprojection.com/highlite-projectors/",
+	"homepage": "https://github.com/bitfocus/companion-module-digitalprojection-highlight#readme",
 	"description": "Digital Projection HIGHlite plugin for Companion",
 	"main": "dphighlight.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Per Røine <per.roine@gmail.com>",
-	"license": "MIT"
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bitfocus/companion-module-digitalprojection-highlight/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-module-digitalprojection-highlight.git"
+	}
 }
